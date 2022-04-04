@@ -17,11 +17,6 @@ public class JudicialRecordsManagerServiceImpl implements JudicialRecordsManager
     }
 
     @Override
-    public JudicialRecord findByJudicialRecordId(String judicialRecordId) {
-        return judicialRecordManagerRepository.findByJudicialRecordId(judicialRecordId);
-    }
-
-    @Override
     public List<JudicialRecord> findAll() {
         return judicialRecordManagerRepository.findAll();
     }
