@@ -2,7 +2,6 @@ package com.addi.challenge.externalsystem.criminaloffencessystem.criminaloffence
 
 import com.addi.challenge.externalsystem.criminaloffencessystem.criminaloffencesmanager.entity.JudicialRecord;
 import com.addi.challenge.externalsystem.criminaloffencessystem.criminaloffencesmanager.repository.JudicialRecordManagerRepository;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -27,12 +26,12 @@ public class JudicialRecordsManagerServiceImpl implements JudicialRecordsManager
     }
 
     @Override
-    public void deleteByJudicialRecordId(String judicialRecordId) {
-        judicialRecordManagerRepository.deleteByJudicialRecordId(judicialRecordId);
+    public void deleteByNationalIdentificationNumber(String nationalIdentificationNumber) {
+        judicialRecordManagerRepository.deleteByNationalIdentificationNumber(nationalIdentificationNumber);
     }
 
     @Override
-    public List<JudicialRecord> findByNationalIdentificationNumber(String nationalIdentificationNumber) {
+    public JudicialRecord findByNationalIdentificationNumber(String nationalIdentificationNumber) {
         return judicialRecordManagerRepository.findByNationalIdentificationNumber(nationalIdentificationNumber);
     }
 }

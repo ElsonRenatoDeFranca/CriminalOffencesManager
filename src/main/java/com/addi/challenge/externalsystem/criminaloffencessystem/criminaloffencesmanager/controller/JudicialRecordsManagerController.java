@@ -32,13 +32,13 @@ public class JudicialRecordsManagerController {
 
     @GetMapping("/{nationalIdentificationNumber}")
     @ResponseBody
-    public ResponseEntity<List<JudicialRecord>> findByNationalIdentificationNumber(@PathVariable("nationalIdentificationNumber") String nationalIdentificationNumber) {
-        List<JudicialRecord> judicialRecords = judicialRecordsManagerService.findByNationalIdentificationNumber(nationalIdentificationNumber);
+    public ResponseEntity<JudicialRecord> findByNationalIdentificationNumber(@PathVariable("nationalIdentificationNumber") String nationalIdentificationNumber) {
+        JudicialRecord judicialRecords = judicialRecordsManagerService.findByNationalIdentificationNumber(nationalIdentificationNumber);
         return new ResponseEntity<>(judicialRecords, HttpStatus.OK);
     }
 
-    @DeleteMapping("/{judicialRecordId}")
-    void deleteById(@PathVariable String judicialRecordId) {
-        judicialRecordsManagerService.deleteByJudicialRecordId(judicialRecordId);
+    @DeleteMapping("/{nationalIdentificationNumber}")
+    void deleteById(@PathVariable String nationalIdentificationNumber) {
+        judicialRecordsManagerService.deleteByNationalIdentificationNumber(nationalIdentificationNumber);
     }
 }

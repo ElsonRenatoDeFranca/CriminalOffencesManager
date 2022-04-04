@@ -9,9 +9,9 @@ public interface JudicialRecordsManagerService {
 
     JudicialRecord save(JudicialRecord judicialRecord);
 
-    void deleteByJudicialRecordId(String judicialRecordId);
+    void deleteByNationalIdentificationNumber(String nationalIdentificationNumber);
 
-    List<JudicialRecord> findByNationalIdentificationNumber(String nationalIdentificationNumber);
+    JudicialRecord findByNationalIdentificationNumber(String nationalIdentificationNumber);
 
 }
 
