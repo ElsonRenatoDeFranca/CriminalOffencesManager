@@ -7,18 +7,17 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
+@Entity(name="JUDICIALRECORD")
 @Getter
-@EqualsAndHashCode(exclude = {"name"})
+@EqualsAndHashCode(exclude = {"id"})
 @AllArgsConstructor
 @RequiredArgsConstructor
 @Builder
-public class CriminalOffence {
+public class JudicialRecord {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String description;
-    private String maximumPrisonTerm;
-    private String maximumFine;
-    private String probationTerm;;
+    private String nationalIdentificationNumber;
+    private String judicialRecordId;
+    private String status;
 }
