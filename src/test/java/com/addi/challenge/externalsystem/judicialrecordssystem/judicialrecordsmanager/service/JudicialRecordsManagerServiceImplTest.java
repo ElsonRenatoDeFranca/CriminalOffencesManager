@@ -1,7 +1,7 @@
-package com.addi.challenge.externalsystem.criminaloffencessystem.criminaloffencesmanager.service;
+package com.addi.challenge.externalsystem.judicialrecordssystem.judicialrecordsmanager.service;
 
-import com.addi.challenge.externalsystem.criminaloffencessystem.criminaloffencesmanager.entity.JudicialRecord;
-import com.addi.challenge.externalsystem.criminaloffencessystem.criminaloffencesmanager.repository.JudicialRecordManagerRepository;
+import com.addi.challenge.externalsystem.judicialrecordssystem.judicialrecordsmanager.entity.JudicialRecord;
+import com.addi.challenge.externalsystem.judicialrecordssystem.judicialrecordsmanager.repository.JudicialRecordManagerRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

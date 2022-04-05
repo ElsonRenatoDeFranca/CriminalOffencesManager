@@ -1,7 +1,7 @@
-package com.addi.challenge.externalsystem.criminaloffencessystem.criminaloffencesmanager.controller;
+package com.addi.challenge.externalsystem.judicialrecordssystem.judicialrecordsmanager.controller;
 
-import com.addi.challenge.externalsystem.criminaloffencessystem.criminaloffencesmanager.entity.JudicialRecord;
-import com.addi.challenge.externalsystem.criminaloffencessystem.criminaloffencesmanager.service.JudicialRecordsManagerService;
+import com.addi.challenge.externalsystem.judicialrecordssystem.judicialrecordsmanager.entity.JudicialRecord;
+import com.addi.challenge.externalsystem.judicialrecordssystem.judicialrecordsmanager.service.JudicialRecordsManagerService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

@@ -1,4 +1,4 @@
-package com.addi.challenge.externalsystem.criminaloffencessystem.criminaloffencesmanager.entity;
+package com.addi.challenge.externalsystem.judicialrecordssystem.judicialrecordsmanager.entity;
 
 import lombok.*;
 

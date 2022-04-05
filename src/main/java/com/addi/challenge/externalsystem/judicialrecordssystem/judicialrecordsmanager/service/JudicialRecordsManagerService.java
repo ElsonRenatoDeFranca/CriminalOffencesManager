@@ -1,6 +1,6 @@
-package com.addi.challenge.externalsystem.criminaloffencessystem.criminaloffencesmanager.service;
+package com.addi.challenge.externalsystem.judicialrecordssystem.judicialrecordsmanager.service;
 
-import com.addi.challenge.externalsystem.criminaloffencessystem.criminaloffencesmanager.entity.JudicialRecord;
+import com.addi.challenge.externalsystem.judicialrecordssystem.judicialrecordsmanager.entity.JudicialRecord;
 
 import java.util.List;
 
