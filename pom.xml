@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.addi.challenge.externalsystem.criminaloffencessystem</groupId>
-	<artifactId>criminaloffencesmanager</artifactId>
+	<artifactId>judicialrecordsmanager</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>CriminalOffencesManager</name>
-	<description>Criminal Offences Manager</description>
+	<name>judicialrecordsmanager</name>
+	<description>Judicial Records Manager</description>
 	<properties>
 		<java.version>1.8</java.version>
 		<testcontainers.version>1.16.2</testcontainers.version>
@@ -52,6 +52,11 @@
 			<groupId>org.testcontainers</groupId>
 			<artifactId>junit-jupiter</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-ui</artifactId>
+			<version>1.6.7</version>
 		</dependency>
 	</dependencies>
 	<dependencyManagement>
