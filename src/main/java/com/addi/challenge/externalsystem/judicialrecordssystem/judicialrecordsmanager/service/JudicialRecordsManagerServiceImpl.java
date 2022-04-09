@@ -36,9 +36,9 @@ public class JudicialRecordsManagerServiceImpl implements JudicialRecordsManager
                 throw new JudicialRecordMismatchException(JUDICIAL_RECORD_ALREADY_EXISTS_EXCEPTION_MESSAGE);
             }
             return judicialRecordManagerRepository.save(judicialRecord);
+        } else {
+            throw new JudicialRecordNotProvidedException(JUDICIAL_RECORD_NOT_PROVIDED_EXCEPTION_MESSAGE);
         }
-
-        throw new JudicialRecordNotProvidedException(JUDICIAL_RECORD_NOT_PROVIDED_EXCEPTION_MESSAGE);
 
     }
 
@@ -46,7 +46,7 @@ public class JudicialRecordsManagerServiceImpl implements JudicialRecordsManager
     public void deleteByNationalIdentificationNumber(String nationalIdentificationNumber) throws JudicialRecordNotFoundException {
         if (judicialRecordAlreadyExists(nationalIdentificationNumber)) {
             judicialRecordManagerRepository.deleteByNationalIdentificationNumber(nationalIdentificationNumber);
-        }else{
+        } else {
             throw new JudicialRecordNotFoundException(JUDICIAL_RECORD_NOT_FOUND_EXCEPTION_MESSAGE);
         }
 
