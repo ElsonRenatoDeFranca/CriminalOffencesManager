@@ -1,6 +1,9 @@
 package com.addi.challenge.externalsystem.judicialrecordssystem.judicialrecordsmanager.service;
 
 import com.addi.challenge.externalsystem.judicialrecordssystem.judicialrecordsmanager.entity.JudicialRecord;
+import com.addi.challenge.externalsystem.judicialrecordssystem.judicialrecordsmanager.exception.JudicialRecordMismatchException;
+import com.addi.challenge.externalsystem.judicialrecordssystem.judicialrecordsmanager.exception.JudicialRecordNotFoundException;
+import com.addi.challenge.externalsystem.judicialrecordssystem.judicialrecordsmanager.exception.JudicialRecordNotProvidedException;
 import com.addi.challenge.externalsystem.judicialrecordssystem.judicialrecordsmanager.repository.JudicialRecordManagerRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -28,10 +31,10 @@ class JudicialRecordsManagerServiceImplTest {
     @Test
     public void shouldReturnANotEmptyListWhenFindAllIsCalledAndThereIsAtLeastOneItemInTheDatabase() {
         when(repository.findAll()).thenReturn(createNotEmptyJudicialRecordMockList());
-        List<JudicialRecord> actualOffense = this.judicialRecordsManagerService.findAll();
+        List<JudicialRecord> actualJudicialRecords = this.judicialRecordsManagerService.findAll();
 
-        assertThat(actualOffense).isNotNull();
-        assertThat(actualOffense.isEmpty()).isFalse();
+        assertThat(actualJudicialRecords).isNotNull();
+        assertThat(actualJudicialRecords.isEmpty()).isFalse();
     }
 
     @Test
@@ -56,10 +59,11 @@ class JudicialRecordsManagerServiceImplTest {
     }
 
     @Test
-    public void shouldDeleteAnExistingOffenseFromTheDatabaseWhenDeleteByIdIsCalled() {
+    public void shouldDeleteAnExistingJudicialRecordFromTheDatabaseWhenDeleteByIdIsCalled() throws JudicialRecordNotFoundException {
         JudicialRecord expectedJudicialRecord = createJudicialRecordMock();
 
         doNothing().when(repository).deleteByNationalIdentificationNumber(any());
+        when(repository.findByNationalIdentificationNumber(any())).thenReturn(expectedJudicialRecord);
 
         this.judicialRecordsManagerService.deleteByNationalIdentificationNumber(expectedJudicialRecord.getNationalIdentificationNumber());
 
@@ -68,7 +72,7 @@ class JudicialRecordsManagerServiceImplTest {
 
 
     @Test
-    public void shouldAddANewOffenseToTheDatabaseWhenSaveIsCalled() {
+    public void shouldSaveNewJudicialRecordToTheDatabaseWhenSaveIsCalled() throws JudicialRecordMismatchException, JudicialRecordNotProvidedException {
         JudicialRecord expectedJudicialRecord = createJudicialRecordMock();
 
         when(repository.save(any())).thenReturn(expectedJudicialRecord);
