@@ -76,7 +76,7 @@ heroku addons:create heroku-postgresql:hobby-dev
 
 6- Push your application to Heroku repository
 ```
-git push heroku main
+git push heroku <main/master>
 ```
 
 7- In case you want to check the logs, type:
